@@ -4,5 +4,9 @@
 2025-04-26 ~ 2025-04-27
 <br />
 - Clone coding completed
-
+<br />
+<br />
+Check my output
+<br />
+https://jhwa1102.github.io/popcornScore/
  
