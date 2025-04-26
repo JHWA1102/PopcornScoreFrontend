@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/popcornScore/static/css/main.ebcb42ec.css",
+    "main.js": "/popcornScore/static/js/main.58d69ca7.js",
+    "index.html": "/popcornScore/index.html",
+    "main.ebcb42ec.css.map": "/popcornScore/static/css/main.ebcb42ec.css.map",
+    "main.58d69ca7.js.map": "/popcornScore/static/js/main.58d69ca7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ebcb42ec.css",
+    "static/js/main.58d69ca7.js"
+  ]
+}
