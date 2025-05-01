@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/popcornScore/static/css/main.ebcb42ec.css",
-    "main.js": "/popcornScore/static/js/main.58d69ca7.js",
+    "main.js": "/popcornScore/static/js/main.41472acd.js",
+    "static/media/Spinner@1x-1.0s-200px-200px.gif": "/popcornScore/static/media/Spinner@1x-1.0s-200px-200px.75059cc393ccd09bf296.gif",
     "index.html": "/popcornScore/index.html",
     "main.ebcb42ec.css.map": "/popcornScore/static/css/main.ebcb42ec.css.map",
-    "main.58d69ca7.js.map": "/popcornScore/static/js/main.58d69ca7.js.map"
+    "main.41472acd.js.map": "/popcornScore/static/js/main.41472acd.js.map"
   },
   "entrypoints": [
     "static/css/main.ebcb42ec.css",
-    "static/js/main.58d69ca7.js"
+    "static/js/main.41472acd.js"
   ]
 }
