@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Movie from "../components/Movie";
 import './Home.css';
+import Spinner from "../assets/images/Spinner@1x-1.0s-200px-200px.gif"
 
 class Home extends React.Component {
   state = {
@@ -28,7 +29,8 @@ class Home extends React.Component {
       <section className="container">
         {isLoading ? (
           <div className="loader">
-            <span className="loader_text">Loading...</span>
+            <h3>잠시만 기다려주세요.</h3>
+            <img src={Spinner} alt="로딩" width="10%" />
           </div>
         ) : (
           <div className="movies">
