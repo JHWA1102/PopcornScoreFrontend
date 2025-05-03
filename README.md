@@ -5,6 +5,10 @@ Check my output
 https://jhwa1102.github.io/popcornScore/
 
 <br />
+https://www.notion.so/1e8d67daca4e8082afaee20ea4139de5?v=1e8d67daca4e8052a66f000cd920332d&pvs=4
+<br />
+
+<br />
 2025-04-26 ~ 2025-04-27
 <br />
 - Clone coding completed
