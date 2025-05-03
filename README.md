@@ -1,4 +1,4 @@
-# 2025-04-26 Joy Movie Rating Clone Coding Project
+# 2025-04-26 Joy Movie Rating Project
 # popcornScore 2025
 Check my output
 <br />
