@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './App.css';
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from './routes/About';
 import Home from "./routes/Home";
 import Navigation from "./components/Navigation";
@@ -13,10 +13,36 @@ import {
   FallbackApiError,
   FallbackNotFound 
 } from "./components/FallbackComponent";
+import axios from "axios";
+import Login from "./routes/Login";
+import SignUp from "./routes/SignUp";
 
 function App() {
+  const [hello, setHello] = useState('');
+  const [error, setError] = useState('');
+  
+  useEffect(() => {
+    axios.get('http://localhost:8080/api/test')
+         .then((res) => {
+          setHello(res.data);
+         })
+         .catch((err) => {
+          setError(err.message);
+         })
+  }, [])
+
+  // 백엔드 연결
+  // <div className="App">
+  //   {error ? (
+    //     <p style={{ color: 'red' }}>에러 발생: {error}</p>
+    //   ) : (
+      //     <p>백엔드에서 받은 데이터: {hello}</p>
+      //   )}
+      // </div>
+      
+      
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Navigation />
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -34,8 +60,10 @@ function App() {
         }>
         </Route>
         <Route path="*" element={<FallbackNotFound />} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 
