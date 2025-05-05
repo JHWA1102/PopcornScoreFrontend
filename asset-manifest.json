@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/PopcornScoreFrontend/static/css/main.ebcb42ec.css",
-    "main.js": "/PopcornScoreFrontend/static/js/main.dd3280c5.js",
-    "static/media/Spinner@1x-1.0s-200px-200px.gif": "/PopcornScoreFrontend/static/media/Spinner@1x-1.0s-200px-200px.75059cc393ccd09bf296.gif",
-    "index.html": "/PopcornScoreFrontend/index.html",
-    "main.ebcb42ec.css.map": "/PopcornScoreFrontend/static/css/main.ebcb42ec.css.map",
-    "main.dd3280c5.js.map": "/PopcornScoreFrontend/static/js/main.dd3280c5.js.map"
+    "main.css": "/popcornscore/static/css/main.ebcb42ec.css",
+    "main.js": "/popcornscore/static/js/main.53082425.js",
+    "static/media/Spinner@1x-1.0s-200px-200px.gif": "/popcornscore/static/media/Spinner@1x-1.0s-200px-200px.75059cc393ccd09bf296.gif",
+    "index.html": "/popcornscore/index.html",
+    "main.ebcb42ec.css.map": "/popcornscore/static/css/main.ebcb42ec.css.map",
+    "main.53082425.js.map": "/popcornscore/static/js/main.53082425.js.map"
   },
   "entrypoints": [
     "static/css/main.ebcb42ec.css",
-    "static/js/main.dd3280c5.js"
+    "static/js/main.53082425.js"
   ]
 }
