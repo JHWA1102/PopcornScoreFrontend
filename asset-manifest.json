@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.ebcb42ec.css",
-    "main.js": "/static/js/main.dce5f221.js",
-    "static/media/Spinner@1x-1.0s-200px-200px.gif": "/static/media/Spinner@1x-1.0s-200px-200px.75059cc393ccd09bf296.gif",
-    "index.html": "/index.html",
-    "main.ebcb42ec.css.map": "/static/css/main.ebcb42ec.css.map",
-    "main.dce5f221.js.map": "/static/js/main.dce5f221.js.map"
+    "main.css": "/PopcornScoreFrontend/static/css/main.ebcb42ec.css",
+    "main.js": "/PopcornScoreFrontend/static/js/main.dd3280c5.js",
+    "static/media/Spinner@1x-1.0s-200px-200px.gif": "/PopcornScoreFrontend/static/media/Spinner@1x-1.0s-200px-200px.75059cc393ccd09bf296.gif",
+    "index.html": "/PopcornScoreFrontend/index.html",
+    "main.ebcb42ec.css.map": "/PopcornScoreFrontend/static/css/main.ebcb42ec.css.map",
+    "main.dd3280c5.js.map": "/PopcornScoreFrontend/static/js/main.dd3280c5.js.map"
   },
   "entrypoints": [
     "static/css/main.ebcb42ec.css",
-    "static/js/main.dce5f221.js"
+    "static/js/main.dd3280c5.js"
   ]
 }
