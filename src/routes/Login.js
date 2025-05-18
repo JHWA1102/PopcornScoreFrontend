@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { Navigate } from "react-router-dom";
 import axios from "axios";
+import styles from './Login.module.css';
 
 const Login = ({setToken}) => {
+    const [isSignUp, setIsSignUp] = useState(false);
+
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
     // const axios = require('axios');
@@ -70,19 +73,67 @@ const Login = ({setToken}) => {
     // }
 
     return(
-        <form onSubmit={handleSubmit}>
-            <img src={`${process.env.PUBLIC_URL}/assets/img4.png`} style={{width: "200px", height: "100px", display: "block", margin: "20px auto 0px auto"}} />
-            <label>
-                <input className="login_input_box" type="text" onChange={e => setUserName(e.target.value)} placeholder="아이디를 입력해주세요."/>
-            </label>
-            <label>
-                <br></br>
-                <input className="login_input_box" type="password"  onChange={e => setPassword(e.target.value)} placeholder="비밀번호를 입력해주세요." />
-            </label>
-            <div>
-                <button type="submit" style={{display: "block", width: "100%", height: "30px", textAlign: "center", marginTop: "10px"}}>회원가입</button>
+        <div>
+            <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
+            <div className={`${styles.container} ${isSignUp ? styles['right-panel-active'] : ''}`}>
+            <div className={`${styles['form-container']} ${styles['sign-up-container']}`}>
+                    <form onSubmit={handleSubmit}>
+                        <h1>Create Account</h1>
+                        <div className={styles['social-container']}>
+                            <a href="#" className={styles.social}><i className="fab fa-facebook-f"></i></a>
+                            <a href="#" className={styles.social}><i className="fab fa-google-plus-g"></i></a>
+                            <a href="#" className={styles.social}><i className="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <span>or use your email for registration</span>
+                        <input type="text" placeholder="Name" onChange={e => setUserName(e.target.value)} />
+                        <input type="email" placeholder="Email" />
+                        <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
+                <div className={`${styles['form-container']} ${styles['sign-in-container']}`}>
+                    <form onSubmit={handleSubmit}>
+                        <h1>Sign in</h1>
+                        <div className={styles['social-container']}>
+                            <a href="#" className={styles.social}><i className="fab fa-facebook-f"></i></a>
+                            <a href="#" className={styles.social}><i className="fab fa-google-plus-g"></i></a>
+                            <a href="#" className={styles.social}><i className="fab fa-linkedin-in"></i></a>
+                        </div>
+                    <span>or use your account</span>
+                    <input type="text" placeholder="Username" onChange={e => setUserName(e.target.value)} />
+                    <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
+                    <a href="#">Forgot your password?</a>
+                    <button type="submit">Sign In</button>
+                    </form>
+                </div>
+                <div className={styles['overlay-container']}>
+                    <div className={styles.overlay}>
+                    <div className={`${styles['overlay-panel']} ${styles['overlay-left']}`}>
+                            <h1>Welcome Back!</h1>
+                            <p>To keep connected with us please login with your personal info</p>
+                            <button className={`${styles.ghost}`} onClick={() => setIsSignUp(false)}>Sign In</button>
+                        </div>
+                        <div className={`${styles['overlay-panel']} ${styles['overlay-right']}`}>
+                        <h1>Hello, Friend!</h1>
+                        <p>Enter your personal details and start journey with us</p>
+                        <button className={`${styles.ghost}`} onClick={() => setIsSignUp(true)}>Sign Up</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </form>
+            {/* <form onSubmit={handleSubmit}>
+                <label>
+                    <input className="login_input_box" type="text" onChange={e => setUserName(e.target.value)} placeholder="아이디를 입력해주세요."/>
+                </label>
+                <label>
+                    <br></br>
+                    <input className="login_input_box" type="password"  onChange={e => setPassword(e.target.value)} placeholder="비밀번호를 입력해주세요." />
+                </label>
+                <div>
+                    <button type="submit" style={{display: "block", width: "100%", height: "30px", textAlign: "center", marginTop: "10px"}}>회원가입</button>
+                </div>
+            </form> */}
+        </div>
     );
 };
 
