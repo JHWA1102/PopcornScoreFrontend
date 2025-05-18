@@ -2,7 +2,7 @@
 # popcornScore 2025
 Check my output
 <br />
-https://jhwa1102.github.io/popcornScore/
+https://jhwa1102.github.io/popcornscore/
 
 <br />
 https://www.notion.so/1e8d67daca4e8082afaee20ea4139de5?v=1e8d67daca4e8052a66f000cd920332d&pvs=4
