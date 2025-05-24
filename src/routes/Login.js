@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from './Login.module.css';
 
@@ -9,27 +9,23 @@ const Login = ({setToken}) => {
 
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
+    const [email, setUserEmail] = useState();
+
+    const navigate = useNavigate();
     // const axios = require('axios');
 
-    function setToken(userToken) {
-        sessionStorage.setItem('token', JSON.stringify(userToken));
-    }
-
-    // async function loginUser(credentials) {
-    //     return fetch('http://localhost:8080/login', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(credentials)
-    //     })
-    //     .then(data => data.json())
+    // function setToken(userToken) {
+    //     sessionStorage.setItem('token', JSON.stringify(userToken));
     // }
 
-    async function loginUser(credentials) {
+    async function loginUser(credentials, isSignUp) {
+        const url = isSignUp 
+            ? 'http://localhost:3000/members/sign-up'
+            : 'http://localhost:3000/members/sign-in';
+
         console.log(credentials);
         try {
-            const response = await axios.post('http://localhost:3000/members/sign-up', credentials, {
+            const response = await axios.post(url, credentials, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -42,23 +38,26 @@ const Login = ({setToken}) => {
         }
     }
 
+    // 2025.05.24 JOY 회원가입 구현 확인
     const handleSubmit = async e => {
         e.preventDefault();
-        const token = await loginUser({
-            username,
-            password
-        });
-        setToken(token);
+        const credentials = isSignUp
+            ? { username, password, email }
+            : { username, password };
+        
+        try {
+            const token = await loginUser(credentials, isSignUp);
 
-        console.log("통과!");
+            // LocalStorage에 저장 : 홈화면에서 버튼 컨트롤 하기 위해서
+            localStorage.setItem('accessToken', token.accessToken);
+            localStorage.setItem('refreshToken', token.refreshToken);
+            localStorage.setItem('username', token.username);
 
-        const handleSubmit = async e => {
-            e.preventDefault();
-            const token = await loginUser({
-                username,
-                password
-            });
-            setToken(token);
+            console.log("통과!");
+            console.log(token);
+            navigate('/'); // 로그인 완료 후 홈으로 이동
+        } catch (error) {
+            alert('로그인 또는 회원가입 실패! 다시 시도해주세요.');
         }
     }
 
@@ -86,7 +85,7 @@ const Login = ({setToken}) => {
                         </div>
                         <span>or use your email for registration</span>
                         <input type="text" placeholder="Name" onChange={e => setUserName(e.target.value)} />
-                        <input type="email" placeholder="Email" />
+                        <input type="email" placeholder="Email" onChange={e => setUserEmail(e.target.value)} />
                         <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
                         <button type="submit">Sign Up</button>
                     </form>
@@ -121,18 +120,6 @@ const Login = ({setToken}) => {
                     </div>
                 </div>
             </div>
-            {/* <form onSubmit={handleSubmit}>
-                <label>
-                    <input className="login_input_box" type="text" onChange={e => setUserName(e.target.value)} placeholder="아이디를 입력해주세요."/>
-                </label>
-                <label>
-                    <br></br>
-                    <input className="login_input_box" type="password"  onChange={e => setPassword(e.target.value)} placeholder="비밀번호를 입력해주세요." />
-                </label>
-                <div>
-                    <button type="submit" style={{display: "block", width: "100%", height: "30px", textAlign: "center", marginTop: "10px"}}>회원가입</button>
-                </div>
-            </form> */}
         </div>
     );
 };
