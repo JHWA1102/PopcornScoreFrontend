@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './App.css';
+import './App.module.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from './routes/About';
 import Home from "./routes/Home";
@@ -16,6 +16,8 @@ import {
 import axios from "axios";
 import Login from "./routes/Login";
 import SignUp from "./routes/SignUp";
+import Header from "./components/Layout/Header";
+import Footer from "./components/Layout/Footer";
 
 function App() {
   const [hello, setHello] = useState('');
@@ -43,6 +45,7 @@ function App() {
       
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Header />
       <Navigation />
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -63,6 +66,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
